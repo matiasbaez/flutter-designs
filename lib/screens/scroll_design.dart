@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ScrollDesignScreen extends StatelessWidget {
   const ScrollDesignScreen({super.key});
@@ -40,10 +41,10 @@ class Screen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        
-        BackgroundWidget(),
 
-        MainContentWidget()
+        const BackgroundWidget(),
+
+        const MainContentWidget()
 
       ]
     );
@@ -58,7 +59,7 @@ class MainContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(fontSize: 55, fontWeight: FontWeight.bold, color: Colors.white);
-
+  
     return SafeArea(
       bottom: false,
       child: Container(
@@ -68,7 +69,7 @@ class MainContentWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('11º', style: textStyle),
-            Text('Miércoles', style: textStyle),
+            Text(DateFormat('EEEE').format(DateTime.now()), style: textStyle),
             Expanded(child: Container()),
             Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white)
           ],
@@ -105,7 +106,7 @@ class Screen2 extends StatelessWidget {
       color: Color(0xff50C2DD),
       child: Center(
         child: TextButton(
-          onPressed: () => {},
+          onPressed: () => Navigator.pushNamed(context, 'home'),
           child: Text('Bienvenido', style: TextStyle(color: Colors.white, fontSize: 30)),
           style: TextButton.styleFrom(
             backgroundColor: Color(0xff0098FA),

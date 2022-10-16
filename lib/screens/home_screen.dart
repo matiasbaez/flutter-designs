@@ -29,7 +29,9 @@ class HomeBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          PageTitleWidget(title: 'Classify transaction', subtitle: 'Classify this transaction into a particular category')
+          PageTitleWidget(title: 'Classify transaction', subtitle: 'Classify this transaction into a particular category'),
+
+          const CardTableWidget()
         ]
       ),
     );
