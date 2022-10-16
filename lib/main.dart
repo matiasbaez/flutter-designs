@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: 'basic_design',
+      initialRoute: 'scroll_design',
       routes: {
-        'basic_design': ( _ ) => const BasicDesignScreen()
+        'basic_design': ( _ ) => const BasicDesignScreen(),
+        'scroll_design': ( _ ) => const ScrollDesignScreen(),
       },
     );
   }
