@@ -8,7 +8,7 @@ class ScrollDesignScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -21,10 +21,10 @@ class ScrollDesignScreen extends StatelessWidget {
         ),
         child: PageView(
           scrollDirection: Axis.vertical,
-          physics: BouncingScrollPhysics(),
-          children: [
-            const Screen1(),
-            const Screen2(),
+          physics: const BouncingScrollPhysics(),
+          children: const [
+            Screen1(),
+            Screen2(),
           ]
         ),
       )
@@ -40,11 +40,11 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: const [
 
-        const BackgroundWidget(),
+        BackgroundWidget(),
 
-        const MainContentWidget()
+        MainContentWidget()
 
       ]
     );
@@ -63,15 +63,15 @@ class MainContentWidget extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Container(
-        margin: EdgeInsets.only(top: 100),
+        margin: const EdgeInsets.only(top: 100),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('11º', style: textStyle),
+            const Text('11º', style: textStyle),
             Text(DateFormat('EEEE').format(DateTime.now()), style: textStyle),
             Expanded(child: Container()),
-            Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white)
+            const Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white)
           ],
         ),
       ),
@@ -87,10 +87,10 @@ class BackgroundWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff50C2DD),
+      color: const Color(0xff50C2DD),
       height: double.infinity,
       alignment: Alignment.topCenter,
-      child: Image(image: AssetImage('assets/scroll-1.png'))
+      child: const Image(image: AssetImage('assets/scroll-1.png'))
     );
   }
 }
@@ -103,16 +103,16 @@ class Screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff50C2DD),
+      color: const Color(0xff50C2DD),
       child: Center(
         child: TextButton(
           onPressed: () => Navigator.pushNamed(context, 'home'),
-          child: Text('Bienvenido', style: TextStyle(color: Colors.white, fontSize: 30)),
           style: TextButton.styleFrom(
-            backgroundColor: Color(0xff0098FA),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
-            shape: StadiumBorder()
+            backgroundColor: const Color(0xff0098FA),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+            shape: const StadiumBorder()
           ),
+          child: const Text('Bienvenido', style: TextStyle(color: Colors.white, fontSize: 30)),
         )
       )
     );

@@ -9,7 +9,7 @@ class CardTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Table(
-      children: [
+      children: const [
         TableRow(
           children: [
             SingleCard(text: 'General', icon: Icons.dashboard, color: Colors.blue),
@@ -76,10 +76,10 @@ class SingleCard extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: color,
-          child: Icon( icon, size: 35, color: Colors.white, ),
           radius: 30,
+          child: Icon( icon, size: 35, color: Colors.white, ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(text, style: TextStyle(color: color, fontSize: 18))
       ],
     );
@@ -100,8 +100,8 @@ class CardBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var buttonStyle = ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(62, 67, 107, 0.7)),
-      padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 40, horizontal: 10)),
+      backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(62, 67, 107, 0.7)),
+      padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.symmetric(vertical: 40, horizontal: 10)),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -111,7 +111,7 @@ class CardBackground extends StatelessWidget {
     );
 
     return Container(
-      margin: EdgeInsets.all(15),
+      margin: const EdgeInsets.all(15),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: BackdropFilter(

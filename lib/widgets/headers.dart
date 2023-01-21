@@ -33,8 +33,10 @@ class DiagonalHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     return Container(
-      height: double.infinity,
+      height: height,
       width: double.infinity,
       // color: const Color(0xff615AAB),
       child: CustomPaint(
@@ -75,8 +77,11 @@ class TriangleHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double height = MediaQuery.of(context).size.height;
+
     return Container(
-      height: double.infinity,
+      height: height,
       width: double.infinity,
       // color: const Color(0xff615AAB),
       child: CustomPaint(
@@ -117,8 +122,10 @@ class BeakHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     return Container(
-      height: double.infinity,
+      height: height,
       width: double.infinity,
       // color: const Color(0xff615AAB),
       child: CustomPaint(
@@ -160,8 +167,10 @@ class CurveHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     return Container(
-      height: double.infinity,
+      height: height,
       width: double.infinity,
       // color: const Color(0xff615AAB),
       child: CustomPaint(
@@ -202,8 +211,10 @@ class WavesHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     return Container(
-      height: double.infinity,
+      height: height,
       width: double.infinity,
       // color: const Color(0xff615AAB),
       child: CustomPaint(

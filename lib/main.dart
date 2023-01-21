@@ -22,8 +22,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       initialRoute: 'scroll_design',
       routes: {
+        'animated_square': ( _ ) => const AnimatedSquareScreen(),
         'basic_design': ( _ ) => const BasicDesignScreen(),
         'scroll_design': ( _ ) => const ScrollDesignScreen(),
+        'animations': ( _ ) => const AnimationsScreen(),
+        'headers' : ( _ ) => const HeadersScreen(),
         'home': ( _ ) => const HomeScreen(),
       },
     );
