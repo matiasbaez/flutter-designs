@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         'basic_design': ( _ ) => const BasicDesignScreen(),
         'scroll_design': ( _ ) => const ScrollDesignScreen(),
         'animations': ( _ ) => const AnimationsScreen(),
+        'circle_graphs': ( _ ) => const CircleGraphs(),
         'headers' : ( _ ) => const HeadersScreen(),
         'home': ( _ ) => const HomeScreen(),
       },
