@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 import 'package:designs/widgets/widgets.dart';
 
-class CircleGraphs extends StatefulWidget {
-  const CircleGraphs({super.key});
+class CircleGraphsScreen extends StatefulWidget {
+  const CircleGraphsScreen({super.key});
 
   @override
-  State<CircleGraphs> createState() => _CircleGraphsState();
+  State<CircleGraphsScreen> createState() => _CircleGraphsScreenState();
 }
 
-class _CircleGraphsState extends State<CircleGraphs> {
+class _CircleGraphsScreenState extends State<CircleGraphsScreen> {
 
   double percentage = 0;
 

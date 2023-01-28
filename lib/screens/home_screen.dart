@@ -85,6 +85,10 @@ class _HomeDrawer extends StatelessWidget {
             title: const Text('Circular Progress'),
             onTap: () => Navigator.pushNamed(context, 'circle_graphs'),
           ),
+          ListTile(
+            title: const Text('Slideshows'),
+            onTap: () => Navigator.pushNamed(context, 'slideshows'),
+          ),
         ],
       ),
     );

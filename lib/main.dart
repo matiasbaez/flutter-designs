@@ -22,13 +22,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       initialRoute: 'scroll_design',
       routes: {
-        'animated_square': ( _ ) => const AnimatedSquareScreen(),
-        'basic_design': ( _ ) => const BasicDesignScreen(),
-        'scroll_design': ( _ ) => const ScrollDesignScreen(),
-        'animations': ( _ ) => const AnimationsScreen(),
-        'circle_graphs': ( _ ) => const CircleGraphs(),
-        'headers' : ( _ ) => const HeadersScreen(),
-        'home': ( _ ) => const HomeScreen(),
+        'animated_square' : ( _ ) => const AnimatedSquareScreen(),
+        'scroll_design'   : ( _ ) => const ScrollDesignScreen(),
+        'circle_graphs'   : ( _ ) => const CircleGraphsScreen(),
+        'basic_design'    : ( _ ) => const BasicDesignScreen(),
+        'animations'      : ( _ ) => const AnimationsScreen(),
+        'slideshows'      : ( _ ) => const SlideShowScreen(),
+        'headers'         : ( _ ) => const HeadersScreen(),
+        'home'            : ( _ ) => const HomeScreen(),
       },
     );
   }
