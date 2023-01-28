@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         'basic_design'    : ( _ ) => const BasicDesignScreen(),
         'animations'      : ( _ ) => const AnimationsScreen(),
         'slideshows'      : ( _ ) => const SlideShowScreen(),
+        'pinterest'       : ( _ ) => const PinterestScreen(),
         'headers'         : ( _ ) => const HeadersScreen(),
         'home'            : ( _ ) => const HomeScreen(),
       },

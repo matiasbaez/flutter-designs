@@ -89,6 +89,10 @@ class _HomeDrawer extends StatelessWidget {
             title: const Text('Slideshows'),
             onTap: () => Navigator.pushNamed(context, 'slideshows'),
           ),
+          ListTile(
+            title: const Text('Pinterest Layout'),
+            onTap: () => Navigator.pushNamed(context, 'pinterest'),
+          ),
         ],
       ),
     );
