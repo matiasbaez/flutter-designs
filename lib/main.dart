@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         'circle_graphs'   : ( _ ) => const CircleGraphsScreen(),
         'basic_design'    : ( _ ) => const BasicDesignScreen(),
         'sliver_list'     : ( _ ) => const SliverListScreen(),
+        'notifications'   : ( _ ) => const NavigationScreen(),
         'animations'      : ( _ ) => const AnimationsScreen(),
         'animate_do'      : ( _ ) => const AnimateDoScreen(),
         'slideshows'      : ( _ ) => const SlideShowScreen(),
