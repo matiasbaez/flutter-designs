@@ -1,10 +1,12 @@
 
-import 'package:animate_do/animate_do.dart';
-import 'package:designs/screens/home_screen.dart';
+import 'package:designs/screens/twitter_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:animate_do/animate_do.dart';
+
+import 'package:designs/screens/screens.dart';
 
 class AnimateDoScreen extends StatelessWidget {
   const AnimateDoScreen({ Key? key }) : super(key: key);
@@ -20,7 +22,11 @@ class AnimateDoScreen extends StatelessWidget {
         actions: [
 
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, CupertinoPageRoute(
+                builder: (context) => const TwitterSplashScreen()
+              ));
+            },
             icon: const FaIcon( FontAwesomeIcons.twitter )
           ),
 

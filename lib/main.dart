@@ -1,3 +1,4 @@
+import 'package:designs/screens/twitter_splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:designs/screens/screens.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'scroll_design',
       routes: {
         'animated_square' : ( _ ) => const AnimatedSquareScreen(),
+        'twitter_splash'  : ( _ ) => const TwitterSplashScreen(),
         'scroll_design'   : ( _ ) => const ScrollDesignScreen(),
         'circle_graphs'   : ( _ ) => const CircleGraphsScreen(),
         'basic_design'    : ( _ ) => const BasicDesignScreen(),
