@@ -50,6 +50,7 @@ class EmergencyScreen extends StatelessWidget {
     )).toList();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Container(

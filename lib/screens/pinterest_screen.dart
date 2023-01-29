@@ -15,10 +15,11 @@ class PinterestScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => _MenuModel(),
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Stack(
-          children: [
+          children: const [
             PinterestGrid(),
-            const _PinterestMenuLocation()
+            _PinterestMenuLocation()
           ]
         )
       ),
