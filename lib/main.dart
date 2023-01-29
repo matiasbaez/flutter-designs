@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         'scroll_design'   : ( _ ) => const ScrollDesignScreen(),
         'circle_graphs'   : ( _ ) => const CircleGraphsScreen(),
         'basic_design'    : ( _ ) => const BasicDesignScreen(),
+        'sliver_list'     : ( _ ) => const SliverListScreen(),
         'animations'      : ( _ ) => const AnimationsScreen(),
         'slideshows'      : ( _ ) => const SlideShowScreen(),
         'emergency'       : ( _ ) => const EmergencyScreen(),

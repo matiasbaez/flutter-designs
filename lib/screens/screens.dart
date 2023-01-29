@@ -1,6 +1,7 @@
 
 export 'package:designs/screens/animated_square_screen.dart';
 export 'package:designs/screens/circle_graphs_screen.dart';
+export 'package:designs/screens/sliver_list_screen.dart';
 export 'package:designs/screens/animations_screen.dart';
 export 'package:designs/screens/slideshow_screen.dart';
 export 'package:designs/screens/pinterest_screen.dart';

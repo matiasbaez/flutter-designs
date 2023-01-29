@@ -101,6 +101,10 @@ class _HomeDrawer extends StatelessWidget {
             title: const Text('Emergency Layout'),
             onTap: () => Navigator.pushNamed(context, 'emergency'),
           ),
+          ListTile(
+            title: const Text('Sliver List'),
+            onTap: () => Navigator.pushNamed(context, 'sliver_list'),
+          ),
         ],
       ),
     );
