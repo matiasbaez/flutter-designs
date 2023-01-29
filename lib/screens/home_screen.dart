@@ -101,6 +101,10 @@ class _HomeDrawer extends StatelessWidget {
             title: const Text('Sliver List'),
             onTap: () => Navigator.pushNamed(context, 'sliver_list'),
           ),
+          ListTile(
+            title: const Text('Animate do'),
+            onTap: () => Navigator.pushNamed(context, 'animate_do'),
+          ),
         ],
       ),
     );
