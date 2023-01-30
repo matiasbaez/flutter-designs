@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import 'package:designs/theme/theme.dart';
+
 class SliverListScreen extends StatelessWidget {
 
   const SliverListScreen({ Key? key }) : super(key: key);
@@ -7,7 +11,6 @@ class SliverListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Stack(
         children: [
           _MainScroll(),
@@ -38,6 +41,10 @@ class _MainScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final themeChanger = Provider.of<ThemeChanger>(context, listen: true);
+    final appTheme = themeChanger.currentTheme;
+
     return CustomScrollView(
       slivers: <Widget>[
         // SliverAppBar(
@@ -53,7 +60,7 @@ class _MainScroll extends StatelessWidget {
             maxHeight: 200,
             child: Container(
               alignment: Alignment.centerLeft,
-              color: Colors.white,
+              color: appTheme.scaffoldBackgroundColor,
               child: const _Title()
             )
           )
@@ -112,19 +119,26 @@ class _NewListButton extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final size = MediaQuery.of(context).size;
+    final themeChanger = Provider.of<ThemeChanger>(context, listen: true);
+    final appTheme = themeChanger.currentTheme;
 
     return ButtonTheme(
       minWidth: size.width * 0.9,
       height: 100,
       child: MaterialButton(
         onPressed: () {},
-        color: const Color(0xffED6762),
+        color: (themeChanger.darkTheme) ? appTheme.colorScheme.secondary : const Color(0xffED6762),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only( topLeft: Radius.circular( 50 ) )
         ),
-        child: const Text(
+        child: Text(
           'CREATE NEW LIST',
-          style: TextStyle( color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 3 ),
+          style: TextStyle(
+            color: appTheme.scaffoldBackgroundColor,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 3
+          ),
         ),
       ),
     );
@@ -164,16 +178,26 @@ class _ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeChanger = Provider.of<ThemeChanger>(context, listen: true);
+    final appTheme = themeChanger.currentTheme;
+
     return Container(
       height: 130,
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.all(30),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: color,
+        color: (themeChanger.darkTheme) ? Colors.grey : color,
         borderRadius: BorderRadius.circular( 30 )
       ),
-      child: Text(title, style: const TextStyle( color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20 ) ),
+      child: Text(
+        title,
+        style: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 20
+        )
+      ),
     );
   }
 }
@@ -182,14 +206,17 @@ class _Title extends StatelessWidget {
   const _Title({ Key? key }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
+    final themeChanger = Provider.of<ThemeChanger>(context, listen: true);
+    final appTheme = themeChanger.currentTheme;
+
     return Column(
       children: <Widget>[
         const SizedBox( height: 30 ),
 
         Container(
           margin: const EdgeInsets.symmetric( horizontal: 30, vertical: 10 ),
-          child: const Text( 'New', style: TextStyle( color: Color(0xff532128), fontSize: 50 ) )
+          child: Text( 'New', style: TextStyle( color: (themeChanger.darkTheme) ? Colors.grey : const Color(0xff532128), fontSize: 50 ) )
         ),
 
         Stack(
@@ -201,7 +228,7 @@ class _Title extends StatelessWidget {
               child: Container(
                 width: 120,
                 height: 8,
-                color: const Color(0xffF7CDD5)
+                color: (themeChanger.darkTheme) ? Colors.grey : const Color(0xffF7CDD5)
               ),
             ),
 

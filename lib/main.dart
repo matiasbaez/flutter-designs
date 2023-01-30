@@ -1,10 +1,17 @@
-import 'package:designs/screens/twitter_splash_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'package:designs/screens/screens.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(const MyApp());
+import 'package:provider/provider.dart';
+
+import 'package:designs/screens/screens.dart';
+import 'package:designs/theme/theme.dart';
+
+void main() => runApp(
+  ChangeNotifierProvider(
+    create: (context) => ThemeChanger(1),
+    child: const MyApp()
+  )
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,6 +20,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final themeChanger = Provider.of<ThemeChanger>(context, listen: true);
+
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle.light
     );
@@ -20,8 +29,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      initialRoute: 'scroll_design',
+      theme: themeChanger.currentTheme,
+      initialRoute: 'launcher',
       routes: {
         'animated_square' : ( _ ) => const AnimatedSquareScreen(),
         'twitter_splash'  : ( _ ) => const TwitterSplashScreen(),
@@ -35,6 +44,7 @@ class MyApp extends StatelessWidget {
         'slideshows'      : ( _ ) => const SlideShowScreen(),
         'emergency'       : ( _ ) => const EmergencyScreen(),
         'pinterest'       : ( _ ) => const PinterestScreen(),
+        'launcher'        : ( _ ) => const LauncherScreen(),
         'headers'         : ( _ ) => const HeadersScreen(),
         'home'            : ( _ ) => const HomeScreen(),
       },
