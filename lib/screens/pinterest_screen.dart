@@ -35,24 +35,31 @@ class _PinterestMenuLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     final _MenuModel menuModel = Provider.of<_MenuModel>(context);
+
+    if ( screenWidth > 500 ) screenWidth = screenWidth - 300;
 
     return Positioned(
       bottom: 30,
-      child: Container(
+      child: SizedBox(
         width: screenWidth,
-        child: Align(
-          alignment: Alignment.center,
-          child: PinterestMenu(
-            show: menuModel.show,
-            items: [
-              PinterestButton(icon: Icons.pie_chart, onPressed: () {}),
-              PinterestButton(icon: Icons.search, onPressed: () {}),
-              PinterestButton(icon: Icons.notifications, onPressed: () {}),
-              PinterestButton(icon: Icons.supervised_user_circle, onPressed: () {}),
-            ],
-          )
+        child: Row(
+          children: [
+            const Spacer(),
+
+            PinterestMenu(
+              show: menuModel.show,
+              items: [
+                PinterestButton(icon: Icons.pie_chart, onPressed: () {}),
+                PinterestButton(icon: Icons.search, onPressed: () {}),
+                PinterestButton(icon: Icons.notifications, onPressed: () {}),
+                PinterestButton(icon: Icons.supervised_user_circle, onPressed: () {}),
+              ],
+            ),
+
+            const Spacer(),
+          ]
         )
       )
     );
@@ -97,13 +104,17 @@ class _PinterestGridState extends State<PinterestGrid> {
 
   @override
   Widget build(BuildContext context) {
+
+    int count;
+    count = (MediaQuery.of(context).size.width > 500) ? 3 : 2;
+
     return StaggeredGridView.countBuilder(
-      crossAxisCount: 4,
+      crossAxisCount: count,
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
       controller: controller,
       itemCount: items.length,
-      staggeredTileBuilder: (index) => StaggeredTile.count(2, index.isEven ? 2 : 3),
+      staggeredTileBuilder: (index) => StaggeredTile.count(1, index.isEven ? 1 : 2),
       itemBuilder: (context, index) => _PinterestItem(index: index ),
     );
   }

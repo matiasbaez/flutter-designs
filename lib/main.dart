@@ -4,12 +4,16 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'package:designs/screens/screens.dart';
+import 'package:designs/models/models.dart';
 import 'package:designs/theme/theme.dart';
 
 void main() => runApp(
-  ChangeNotifierProvider(
-    create: (context) => ThemeChanger(1),
-    child: const MyApp()
+  MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => ThemeChanger(1)),
+      ChangeNotifierProvider(create: (context) => LayoutModel()),
+    ],
+    child: const MyApp(),
   )
 );
 
@@ -30,7 +34,18 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: themeChanger.currentTheme,
-      initialRoute: 'launcher',
+      initialRoute: 'scroll_design',
+      // home: OrientationBuilder(
+      //   builder: (context, orientation) {
+      //     final screenSize = MediaQuery.of(context).size;
+
+      //     if ( screenSize.width > 500 ) {
+      //       return const LauncherTabletScreen();
+      //     }
+
+      //     return const LauncherScreen();
+      //   },
+      // ),
       routes: {
         'animated_square' : ( _ ) => const AnimatedSquareScreen(),
         'twitter_splash'  : ( _ ) => const TwitterSplashScreen(),

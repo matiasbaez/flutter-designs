@@ -109,6 +109,10 @@ class _HomeDrawer extends StatelessWidget {
             title: const Text('Notifications'),
             onTap: () => Navigator.pushNamed(context, 'notifications'),
           ),
+          ListTile(
+            title: const Text('Launcher'),
+            onTap: () => Navigator.pushNamed(context, 'launcher'),
+          ),
         ],
       ),
     );

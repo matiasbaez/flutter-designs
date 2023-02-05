@@ -3,27 +3,51 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import 'package:designs/models/models.dart';
+import 'package:designs/screens/screens.dart';
 import 'package:designs/routes/routes.dart';
 import 'package:designs/theme/theme.dart';
 
-class LauncherScreen extends StatelessWidget {
-  const LauncherScreen({ Key? key }) : super(key: key);
+class LauncherTabletScreen extends StatelessWidget {
+  const LauncherTabletScreen({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
-    final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
+    final LayoutModel layoutModel = Provider.of<LayoutModel>(context);
+    final themeChanger = Provider.of<ThemeChanger>(context);
+    final appTheme = themeChanger.currentTheme;
 
     return Scaffold(
 
       appBar: AppBar(
         backgroundColor: appTheme.colorScheme.secondary,
-        title: const Text('Launcher'),
+        title: const Text('Launcher - Tablet'),
       ),
 
       drawer: _CustomDrawer(),
 
-      body: _OptionsList(),
+      body: Row(
+        children: <Widget>[
+
+          SizedBox(
+            width: 300,
+            height: double.infinity,
+            child: _OptionsList()
+          ),
+
+          Container(
+            width: 1,
+            height: double.infinity,
+            color: ( themeChanger.darkTheme ) ? Colors.grey : appTheme.colorScheme.secondary,
+          ),
+
+          Expanded(
+            child: layoutModel.currentPage
+          ),
+
+        ]
+      ),
     );
   }
 }
@@ -44,7 +68,10 @@ class _OptionsList extends StatelessWidget {
         leading: FaIcon( pageRoutes[i].icon, color: appTheme.colorScheme.secondary ),
         title: Text( pageRoutes[i].title ),
         trailing: FaIcon( FontAwesomeIcons.chevronRight, color: appTheme.colorScheme.secondary ),
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => pageRoutes[i].page)),
+        onTap: () {
+          final LayoutModel layoutModel = Provider.of<LayoutModel>(context, listen: false);  
+          layoutModel.currentPage = pageRoutes[i].page;
+        }
       ),
     );
   }
